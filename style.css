@@ -1,0 +1,154 @@
+/* Custom styles for SmartShop */
+
+/* Apply Roboto font to the whole site */
+body, h1, h2, h3, h4, h5, h6, p, a, button, input, textarea, select {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; /* normal text */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500; /* slightly bolder headings */
+}
+
+
+/* Navbar customizations */
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+body {
+    padding-top: 65px; /* adjust according to navbar height */
+}
+
+.navbar.fixed-top {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* Carousel height */
+.carousel-item img {
+    height: auto;
+    object-fit: cover;
+}
+
+/* Product cards */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+    height: auto; /* Allow natural height for aspect ratio */
+    max-height: 200px; /* Max height to prevent overflow */
+    width: 100%; /* Full width for responsiveness */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
+    transition: opacity 0.3s ease; /* Smooth loading transition to reduce flickering */
+}
+
+/* Cart Sidebar */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px; /* Hidden initially */
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1050;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.open {
+    right: 0;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.cart-footer {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+/* Cart item image styling */
+.cart-item-img {
+    width: 50px; /* Adjust size as needed (e.g., 40px for smaller) */
+    height: 50px; /* Keep it square for icons */
+    object-fit: cover; /* Ensures the image fits without distortion */
+    border-radius: 4px; /* Optional: Adds a subtle rounded corner for a polished look */
+}
+
+/* Review cards */
+.review-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.review-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Star rating */
+.star-rating {
+    color: #ffde00; /* Yellow color for stars */
+    font-size: 25px;
+}
+
+/* Footer */
+footer a {
+    text-decoration: none;
+}
+footer {
+    background-color: #0B5ED7;
+    color: white;
+    padding: 20px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 250px;
+    }
+    .product-card img {
+        max-height: 150px; /* Smaller on mobile */
+    }
+    .cart-sidebar {
+        width: 100vw;
+        right: -100vw;
+    }
+    .cart-sidebar.open {
+        right: 0;
+    }
+}
